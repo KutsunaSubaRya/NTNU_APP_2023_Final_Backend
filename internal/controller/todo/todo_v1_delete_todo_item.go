@@ -23,7 +23,13 @@ func (c *ControllerV1) DeleteTodoItem(ctx context.Context, req *v1.DeleteTodoIte
 			Error: err.Error(),
 		})
 	}
-	
+
+	if uid.Int() == 0 {
+		r.Response.WriteJsonExit(v1.DeleteTodoItemRes{
+			Error: "todo item not found",
+		})
+	}
+
 	if uid.Int() != r.GetCtxVar("id").Int() {
 		r.Response.WriteJsonExit(v1.DeleteTodoItemRes{
 			Error: "permission denied",
