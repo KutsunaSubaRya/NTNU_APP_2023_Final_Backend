@@ -12,6 +12,7 @@ import (
 
 type ITodoV1 interface {
 	CreateTodoItem(ctx context.Context, req *v1.CreateTodoItemReq) (res *v1.CreateTodoItemRes, err error)
+	DeleteTodoItem(ctx context.Context, req *v1.DeleteTodoItemReq) (res *v1.DeleteTodoItemRes, err error)
 }
 
 

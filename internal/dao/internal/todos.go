@@ -20,18 +20,24 @@ type TodosDao struct {
 
 // TodosColumns defines and stores column names for table todos.
 type TodosColumns struct {
-	Id      string //
-	UserId  string //
-	Content string //
-	IsDone  string //
+	Id        string //
+	UserId    string //
+	Content   string //
+	IsDone    string //
+	CreatedAt string //
+	UpdatedAt string //
+	DeletedAt string //
 }
 
 // todosColumns holds the columns for table todos.
 var todosColumns = TodosColumns{
-	Id:      "id",
-	UserId:  "user_id",
-	Content: "content",
-	IsDone:  "is_done",
+	Id:        "id",
+	UserId:    "user_id",
+	Content:   "content",
+	IsDone:    "is_done",
+	CreatedAt: "created_at",
+	UpdatedAt: "updated_at",
+	DeletedAt: "deleted_at",
 }
 
 // NewTodosDao creates and returns a new DAO object for table data access.
