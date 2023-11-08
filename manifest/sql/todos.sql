@@ -1,0 +1,7 @@
+CREATE TABLE todos
+(
+    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    content TEXT    NOT NULL,
+    is_done BOOLEAN NOT NULL DEFAULT 0
+);

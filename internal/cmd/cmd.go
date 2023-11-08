@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"NTNU_APP_2023_Final_Backend/internal/controller/todo"
 	"NTNU_APP_2023_Final_Backend/utility"
 	"context"
 	"database/sql"
@@ -42,7 +43,9 @@ var (
 				if err != nil {
 					panic(err)
 				}
-				group.Bind()
+				group.Bind(
+					todo.NewV1(),
+				)
 			})
 			s.Run()
 			return nil
@@ -67,13 +70,15 @@ func MiddlewareCORS(r *ghttp.Request) {
 
 func InitDB() {
 	// init db
+	os.Remove("./NTNU_APP_2023_Final_DB.sqlite3")
+	fmt.Println("remove old db success")
 	db, err := sql.Open("sqlite3", "./NTNU_APP_2023_Final_DB.sqlite3")
 	utility.IfErrExit(err)
 	defer db.Close()
 
 	// init tables
 	sqlFilename := []string{
-		"users.sql",
+		"users.sql", "todos.sql",
 	}
 	for _, filename := range sqlFilename {
 		sqlFile, err := os.ReadFile("./manifest/sql/" + filename)
