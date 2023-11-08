@@ -15,6 +15,7 @@ type ITodoV1 interface {
 	DeleteAllDone(ctx context.Context, req *v1.DeleteAllDoneReq) (res *v1.DeleteAllDoneRes, err error)
 	DeleteTodoItem(ctx context.Context, req *v1.DeleteTodoItemReq) (res *v1.DeleteTodoItemRes, err error)
 	SwitchTodoItemStatus(ctx context.Context, req *v1.SwitchTodoItemStatusReq) (res *v1.SwitchTodoItemStatusRes, err error)
+	UpdateTodoItem(ctx context.Context, req *v1.UpdateTodoItemReq) (res *v1.UpdateTodoItemRes, err error)
 }
 
 
