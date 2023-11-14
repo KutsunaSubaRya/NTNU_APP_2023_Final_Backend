@@ -1,0 +1,10 @@
+CREATE TABLE todos
+(
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id    INTEGER   NOT NULL,
+    content    TEXT      NOT NULL,
+    is_done    BOOLEAN   NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP
+);
