@@ -60,7 +60,7 @@ func CfgGet(ctx context.Context, name string) *gvar.Var {
 
 func MiddlewareCORS(r *ghttp.Request) {
 	corsOptions := r.Response.DefaultCORSOptions()
-	corsOptions.AllowDomain = []string{"localhost"}
+	corsOptions.AllowDomain = []string{"localhost", "app.smallten.me"}
 	if !r.Response.CORSAllowedOrigin(corsOptions) {
 		r.Response.WriteStatusExit(http.StatusForbidden)
 	}
