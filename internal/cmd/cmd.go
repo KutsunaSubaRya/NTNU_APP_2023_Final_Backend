@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"NTNU_APP_2023_Final_Backend/internal/controller/curriculum"
+	"NTNU_APP_2023_Final_Backend/internal/controller/note"
 	"NTNU_APP_2023_Final_Backend/internal/controller/todo"
 	"NTNU_APP_2023_Final_Backend/utility"
 	"context"
@@ -47,6 +48,7 @@ var (
 				group.Bind(
 					todo.NewV1(),
 					curriculum.NewV1(),
+					note.NewV1(),
 				)
 			})
 			s.Run()
@@ -80,7 +82,7 @@ func InitDB() {
 
 	// init tables
 	sqlFilename := []string{
-		"users.sql", "todos.sql", "curriculums.sql",
+		"users.sql", "todos.sql", "curriculums.sql", "notes.sql",
 	}
 	for _, filename := range sqlFilename {
 		sqlFile, err := os.ReadFile("./manifest/sql/" + filename)
