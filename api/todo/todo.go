@@ -1,12 +1,12 @@
 // =================================================================================
-// Code generated and maintained by GoFrame CLI tool. DO NOT EDIT. 
+// Code generated and maintained by GoFrame CLI tool. DO NOT EDIT.
 // =================================================================================
 
 package todo
 
 import (
 	"context"
-	
+
 	"NTNU_APP_2023_Final_Backend/api/todo/v1"
 )
 
@@ -18,5 +18,3 @@ type ITodoV1 interface {
 	SwitchTodoItemStatus(ctx context.Context, req *v1.SwitchTodoItemStatusReq) (res *v1.SwitchTodoItemStatusRes, err error)
 	UpdateTodoItem(ctx context.Context, req *v1.UpdateTodoItemReq) (res *v1.UpdateTodoItemRes, err error)
 }
-
-
