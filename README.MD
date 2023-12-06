@@ -1,5 +1,7 @@
 # NTNU_APP_2023_Final_Backend
 
+- 專案前端： [NTNU_APP_2023_Final](https://github.com/Adam7066/NTNU_APP_2023_Final)
+
 ## Setup
 1. `cp ./manifest/config/config.yaml.example ./manifest/config/config.yaml`
 2. 編輯 `./manifest/config/config.yaml`，修改相關資訊
